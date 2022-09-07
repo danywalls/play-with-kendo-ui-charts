@@ -1,0 +1,31 @@
+<div>
+  <h1>Using The Power of Kendo Chart</h1>
+  <label for="typeChartSelector">Pick Chart
+    <select [(ngModel)]="typeChart" id="typeChartSelector">
+      <option value="line">Line</option>
+      <option value="pie">Pie</option>
+      <option value="bar">Bar</option>
+    </select>
+  </label>
+</div>
+
+
+<kendo-chart>
+  <kendo-chart-title
+    color="black"
+    font="29pt sans-serif"
+    text="Top Javascript Framework"
+  >
+  </kendo-chart-title>
+  <kendo-chart-legend position="top"></kendo-chart-legend>
+  <kendo-chart-series>
+    <kendo-chart-series-item
+      [data]="data"
+      [labels]="{ visible: true, content: label}"
+      [type]="typeChart"
+      categoryField="name"
+      colorField="color"
+      field="value">
+    </kendo-chart-series-item>
+  </kendo-chart-series>
+</kendo-chart>
